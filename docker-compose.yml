@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  postgresql-db:
+    image: postgres:9.6
+    container_name: elixir-lights
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: pass123
+      POSTGRES_DB: lights
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./data:/var/lib/postgresql/data
+  pd-admin:
+    image: adminer
+    container_name: pd-admin-lights
+    ports:
+      - "8080:8080"
