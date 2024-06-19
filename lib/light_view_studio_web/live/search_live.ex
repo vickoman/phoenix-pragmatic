@@ -58,7 +58,7 @@ defmodule LightViewStudioWeb.SearchLive do
               </div>
             </div>
           </li>
-          <%= end %>
+          <% end %>
         </ul>
       </div>
     </div>
@@ -67,10 +67,13 @@ defmodule LightViewStudioWeb.SearchLive do
 
   def handle_event("search", %{"zip" => zip}, socket) do
     send(self(), {:run_zip_search, zip})
-    {:noreply, assign(socket,
-      stores: [],
-      loading: true
-      )}
+
+    socket =
+        assign(socket,
+        stores: [],
+        loading: true
+      )
+    {:noreply, socket}
   end
 
   def handle_info({:run_zip_search, zip}, socket) do
