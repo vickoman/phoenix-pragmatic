@@ -8,7 +8,7 @@ defmodule LightViewStudioWeb.LightLive do
 
   def render(assigns) do
     ~H"""
-    <h1 class="text-center text-indigo-800 text-cool-gray-900 font-extrabold text-4xl mb-8">Front Portch Light</h1>
+    <h1>Luces Frontales</h1>
     <div id="light">
       <div class="meter">
         <span  style={"width: #{@brightness}%;"}>
