@@ -58,7 +58,8 @@ defmodule LightViewStudio.MixProject do
       {:jason, "~> 1.2"},
       {:dns_cluster, "~> 0.1.1"},
       {:bandit, "~> 1.2"},
-      {:number, "~> 1.0.5"}
+      {:number, "~> 1.0.5"},
+      {:timex, "~> 3.7.11"}
     ]
   end
 
