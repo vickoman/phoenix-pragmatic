@@ -6,6 +6,9 @@ defmodule LightViewStudioWeb.SalesDashboardLive do
   import Number.Percentage
 
   def mount(_params, _session, socket) do
+    if connected?(socket) do
+      :timer.send_interval(1000, self(), :tick)
+    end
     socket = assign_stats(socket)
     {:ok, socket}
   end
@@ -50,6 +53,10 @@ defmodule LightViewStudioWeb.SalesDashboardLive do
   end
 
   def handle_event("refresh", _, socket) do
+    {:noreply, assign_stats(socket)}
+  end
+
+  def handle_info(:tick, socket) do
     {:noreply, assign_stats(socket)}
   end
 
