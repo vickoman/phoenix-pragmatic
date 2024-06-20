@@ -23,6 +23,7 @@ defmodule LightViewStudioWeb.Router do
     live "/sales-dashboard", SalesDashboardLive
     live "/search", SearchLive
     live "/search-flights", SearchFlightsLive
+    live "/autocomplete", AutocompleteLive
   end
 
   # Other scopes may use custom stacks.
