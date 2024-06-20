@@ -46,6 +46,7 @@ defmodule LightViewStudioWeb.LicenseLive do
           </div>
           <form phx-change="update">
             <input type="range" min="1" max="10"
+            phx-debounce="500"
                   name="seats" value={@seats} />
           </form>
           <div class="amount">
