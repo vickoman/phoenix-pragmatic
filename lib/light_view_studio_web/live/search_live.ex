@@ -30,7 +30,7 @@ defmodule LightViewStudioWeb.SearchLive do
         <div class="loader">
           Loading...
         </div>
-      <%= end %>
+      <% end %>
       <div class="stores">
         <ul>
           <%=for store <- @stores do %>
